@@ -75,7 +75,7 @@ const Tabs = () => {
         </ul>
 
         {/* Tab Panels */}
-        <section id="panels" className="container mx-auto">
+        <div id="panels" className="container mx-auto">
           {/* Panel 1 */}
           <div
             id="link1"
@@ -187,7 +187,7 @@ const Tabs = () => {
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </div>
     </>
   );
