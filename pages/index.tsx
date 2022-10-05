@@ -4,6 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import { Formik, Field, Form } from "formik";
 
 const Home: NextPage = () => {
   return (
@@ -320,6 +321,98 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Newsletter Section */}
+      <section id="newsletter" className="bg-softBlue">
+        {/* Main Container */}
+        <div className="max-w-lg mx-auto py-24">
+          <p className="mb-6 text-lg tracking-widest text-center text-white uppercase">
+            35,000+ Already Joined
+          </p>
+
+          <h2 className="px-3 mb-6 text-3xl font-semibold text-center text-white md:text-4xl">
+            Stay up-to-date with what we're doing
+          </h2>
+
+          {/* Form */}
+          <Formik
+            initialValues={{
+              email: "",
+            }}
+            onSubmit={async (values) => {
+              await new Promise((r) => setTimeout(r, 500));
+              alert(JSON.stringify(values, null, 2));
+            }}
+          >
+            <Form className="flex flex-col items-start justify-center max-w-2xl mx-auto space-y-6 text-base px-6 md:flex-row md:space-y-0 md:space-x-4 md:px-0">
+              <div className="flex flex-col justify-between items-center mx-auto md:flex-row md:mx-0">
+                <Field
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email address"
+                  type="email"
+                  className="flex-1 px-6 pt-3 pb-2 mb-4 rounded-lg border-1 border-white focus:outline-none md:mr-3 md:mb-0"
+                />
+                <button
+                  type="submit"
+                  className="inline-flex px-6 py-3 font-semibold text-center text-white duration-200 transform rounded-lg cursor-pointer focus:outline-none bg-softRed hover:opacity-90"
+                >
+                  Contact Us
+                </button>
+              </div>
+            </Form>
+          </Formik>
+        </div>
+      </section>
+
+      <footer className="py-16 bg-veryDarkBlue">
+        {/* Footer Flex Container */}
+        <div className="container flex flex-col items-center justify-between mx-auto space-y-16 px-6 md:flex-row md:space-y-0">
+          {/* Logo/ Menu Container */}
+          <div className="flex flex-col items-center justify-between space-y-8 text-lg font-light md:flex-row md:space-y-0 md:space-x-14 text-grayishBlue">
+            <picture>
+              <img
+                src="/img/logo-bookmark-footer.svg"
+                alt="logo bookmark footer"
+                className="mb-1"
+              />
+            </picture>
+
+            <Link href="#features" scroll={false}>
+              <a className="uppercase hover:text-softRed">Features</a>
+            </Link>
+            <Link href="#download" scroll={false}>
+              <a className="uppercase hover:text-softRed">Download</a>
+            </Link>
+            <Link href="#faq" scroll={false}>
+              <a className="uppercase hover:text-softRed">FAQ</a>
+            </Link>
+          </div>
+
+          {/* Social Container */}
+          <div className="flex space-x-10">
+            <Link href="#" passHref>
+              <picture>
+                <img
+                  src="/img/icon-facebook.svg"
+                  alt="facebook"
+                  className="h-6 ficon"
+                />
+              </picture>
+            </Link>
+
+            <Link href="#" passHref>
+              <picture>
+                <img
+                  src="/img/icon-twitter.svg"
+                  alt="twitter"
+                  className="h-6 ficon"
+                />
+              </picture>
+            </Link>
+          </div>
+        </div>
+      </footer>
     </>
   );
 };
