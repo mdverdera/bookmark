@@ -1,9 +1,9 @@
 import Tabs from "@components/Tabs";
-import Tabs1 from "@components/Tabs1";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
 const Home: NextPage = () => {
   return (
@@ -188,6 +188,133 @@ const Home: NextPage = () => {
                     Add & Install Extension
                   </a>
                 </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Heading */}
+      <section id="faq">
+        <div className="container mx-auto">
+          <h2 className="mb-6 text-3xl font-semibold text-center md:text-4xl">
+            Frequently Asked Questions
+          </h2>
+
+          <p className="max-w-lg px-6 mx-auto text-center text-grayishBlue">
+            Here are some of our FAQs. If you have any other questions you'd
+            like answered please feel free to email us.
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ Accordion */}
+      <section id="faq-accordion">
+        {/* Main Container */}
+        <div className="container mx-auto px-6 mb-32">
+          {/* Accordion Container */}
+          <div className="max-w-2xl m-8 mx-auto overflow-hidden">
+            {/* Tab 1 */}
+            <div className="py-1 border-b outline-none group" tabIndex={1}>
+              {/* Tab Flex Container */}
+              <div className="flex items-center justify-between py-3 text-gray-500 transition duration-500 cursor-pointer group ease-in-out">
+                {/* Tab Title */}
+                <div className="transition duration-500 ease-linear group-hover:text-red-500">
+                  What is Bookmark?
+                </div>
+
+                {/* Arrow */}
+                <div className="transition duration-500 ease-linear group-focus:-rotate-180 group-focus:text-red-500">
+                  <ChevronDownIcon className="h-5 w-5" />
+                </div>
+              </div>
+
+              {/* Tab Inner Content */}
+              <div className="overflow-hidden transition duration-500 group-focus:max-h-screen max-h-0 ease-linear">
+                <p className="py-2 text-justify text-gray-400">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Beatae sit eligendi odio, quam fuga cum quasi quaerat et
+                  numquam eius quo. Ratione voluptate voluptatem neque animi
+                  esse consequuntur ab totam?
+                </p>
+              </div>
+            </div>
+
+            {/* Tab 2 */}
+            <div className="py-1 border-b outline-none group" tabIndex={2}>
+              {/* Tab Flex Container */}
+              <div className="flex items-center justify-between py-3 text-gray-500 transition duration-500 cursor-pointer group ease-in-out">
+                {/* Tab Title */}
+                <div className="transition duration-500 ease-linear group-hover:text-red-500">
+                  How can I request a new browser?
+                </div>
+
+                {/* Arrow */}
+                <div className="transition duration-500 ease-linear group-focus:-rotate-180 group-focus:text-red-500">
+                  <ChevronDownIcon className="h-5 w-5" />
+                </div>
+              </div>
+
+              {/* Tab Inner Content */}
+              <div className="overflow-hidden transition duration-500 group-focus:max-h-screen max-h-0 ease-linear">
+                <p className="py-2 text-justify text-gray-400">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Beatae sit eligendi odio, quam fuga cum quasi quaerat et
+                  numquam eius quo. Ratione voluptate voluptatem neque animi
+                  esse consequuntur ab totam?
+                </p>
+              </div>
+            </div>
+
+            {/* Tab 3 */}
+            <div className="py-1 border-b outline-none group" tabIndex={3}>
+              {/* Tab Flex Container */}
+              <div className="flex items-center justify-between py-3 text-gray-500 transition duration-500 cursor-pointer group ease-in-out">
+                {/* Tab Title */}
+                <div className="transition duration-500 ease-linear group-hover:text-red-500">
+                  Is ther a mobile app?
+                </div>
+
+                {/* Arrow */}
+                <div className="transition duration-500 ease-linear group-focus:-rotate-180 group-focus:text-red-500">
+                  <ChevronDownIcon className="h-5 w-5" />
+                </div>
+              </div>
+
+              {/* Tab Inner Content */}
+              <div className="overflow-hidden transition duration-500 group-focus:max-h-screen max-h-0 ease-linear">
+                <p className="py-2 text-justify text-gray-400">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Beatae sit eligendi odio, quam fuga cum quasi quaerat et
+                  numquam eius quo. Ratione voluptate voluptatem neque animi
+                  esse consequuntur ab totam?
+                </p>
+              </div>
+            </div>
+
+            {/* Tab 4 */}
+            <div className="py-1 border-b outline-none group" tabIndex={4}>
+              {/* Tab Flex Container */}
+              <div className="flex items-center justify-between py-3 text-gray-500 transition duration-500 cursor-pointer group ease-in-out">
+                {/* Tab Title */}
+                <div className="transition duration-500 ease-linear group-hover:text-red-500">
+                  What about other Chromium browsers?
+                </div>
+
+                {/* Arrow */}
+                <div className="transition duration-500 ease-linear group-focus:-rotate-180 group-focus:text-red-500">
+                  <ChevronDownIcon className="h-5 w-5" />
+                </div>
+              </div>
+
+              {/* Tab Inner Content */}
+              <div className="overflow-hidden transition duration-500 group-focus:max-h-screen max-h-0 ease-linear">
+                <p className="py-2 text-justify text-gray-400">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Beatae sit eligendi odio, quam fuga cum quasi quaerat et
+                  numquam eius quo. Ratione voluptate voluptatem neque animi
+                  esse consequuntur ab totam?
+                </p>
               </div>
             </div>
           </div>
