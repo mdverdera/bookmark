@@ -5,8 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { Formik, Field, Form } from "formik";
+import { useState } from "react";
 
 const Home: NextPage = () => {
+  const [isOpen, setOpen] = useState(false);
+  const toggleMenu = () => setOpen(!isOpen);
   return (
     <>
       <Head>
@@ -18,9 +21,15 @@ const Home: NextPage = () => {
         <div className="flex items-center justify-between space-x-20 my-6">
           {/* Logo */}
           <div className="z-30">
-            <picture>
-              <img src="/img/logo-bookmark.svg" alt="logo" />
-            </picture>
+            {isOpen ? (
+              <picture>
+                <img src="/img/logo-bookmark-footer.svg" alt="logo" />
+              </picture>
+            ) : (
+              <picture>
+                <img src="/img/logo-bookmark.svg" alt="logo" />
+              </picture>
+            )}
           </div>
 
           {/* Menu Items */}
@@ -39,6 +48,48 @@ const Home: NextPage = () => {
               <a className="px-8 py-2 text-white bg-softRed border-2 border-softRed rounded-lg shadow-md hover:text-softRed hover:bg-white">
                 Login
               </a>
+            </Link>
+          </div>
+
+          {/* Hamburger Button */}
+          <button
+            className={`${
+              isOpen && "open"
+            } z-30 block md:hidden focus:outline-none hamburger`}
+            onClick={toggleMenu}
+          >
+            <span className="hamburger-top"></span>
+            <span className="hamburger-middle"></span>
+            <span className="hamburger-bottom"></span>
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <div
+          className={`fixed inset-0 z-20 ${
+            isOpen ? "flex" : "hidden"
+          } flex-col items-center self-end w-full h-full max-h-screen px-6 py-1 pt-24 pb-4 tracking-widest text-white uppercase divide-y divide-gray-500 opacity-90 bg-veryDarkBlue md:hidden`}
+        >
+          <div className="w-full py-3 text-center">
+            <Link href="#features">
+              <a className="block hover:text-softRed">Features</a>
+            </Link>
+          </div>
+
+          <div className="w-full py-3 text-center">
+            <Link href="#download">
+              <a className="block hover:text-softRed">Download</a>
+            </Link>
+          </div>
+
+          <div className="w-full py-3 text-center">
+            <Link href="#faq">
+              <a className="block hover:text-softRed">FAQ</a>
+            </Link>
+          </div>
+          <div className="w-full py-3 text-center">
+            <Link href="#">
+              <a className="block hover:text-softRed">Login</a>
             </Link>
           </div>
         </div>

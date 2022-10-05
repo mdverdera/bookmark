@@ -24,3 +24,38 @@
   filter: invert(53%) sepia(38%) saturate(3303%) hue-rotate(326deg)
     brightness(101%) contrast(96%);
 }
+
+/* Hamburger Menu */
+.hamburger {
+  @apply cursor-pointer w-6 h-6 transition-all duration-200 relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  @apply absolute w-6 h-[3px] top-0 left-0 bg-black transform rotate-0 transition-all duration-500;
+}
+
+.hamburger-middle {
+  @apply transform translate-y-[7px];
+}
+
+.hamburger-bottom {
+  @apply transform translate-y-[14px] bg-black;
+}
+
+.open {
+  @apply transform rotate-90 translate-y-0 fixed top-[50px] right-[25px];
+}
+
+.open .hamburger-top {
+  @apply transform rotate-45 translate-y-3 translate-x-0 bg-white;
+}
+
+.open .hamburger-middle {
+  @apply hidden;
+}
+
+.open .hamburger-bottom {
+  @apply transform -rotate-45 translate-y-3 translate-x-0 bg-white;
+}
